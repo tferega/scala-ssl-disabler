@@ -42,6 +42,4 @@ times).
 
 
 ## License
-Copyright 2012 Tomo Ferega
-
-Licensed under the [Do What The Fuck You Want To Public License, Version 2](http://sam.zoy.org/wtfpl/)
+[Unlicensend](http://unlicense.org/)
