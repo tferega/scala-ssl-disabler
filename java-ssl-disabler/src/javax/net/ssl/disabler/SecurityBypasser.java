@@ -25,7 +25,7 @@ public class SecurityBypasser {
         }
     }
 
-    public static void restoreSllSecurity() {
+    public static void restoreSSLSecurity() {
         if (isSet) {
             HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLSocketFactory);
             HttpsURLConnection.setDefaultHostnameVerifier(defaultHostnameVerifier);

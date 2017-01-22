@@ -34,7 +34,7 @@ object SecurityBypasser {
     HttpsURLConnection.setDefaultHostnameVerifier(AllHosts)
   }
 
-  def restoreSllSecurity(): Unit = {
+  def restoreSSLSecurity(): Unit = {
     // If defaults is set, restore the originals.
     defaults.foreach { d =>
       HttpsURLConnection.setDefaultSSLSocketFactory(d.sslSocketFactory)
@@ -46,7 +46,7 @@ object SecurityBypasser {
   def executeBypassed[T](f: => T): T = {
     destroySSLSecurity()
     var r = f
-    restoreSllSecurity()
+    restoreSSLSecurity()
     r
   }
 }
