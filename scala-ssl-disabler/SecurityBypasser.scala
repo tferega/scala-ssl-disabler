@@ -18,7 +18,7 @@ object SecurityBypasser {
     def verify(urlHostName: String, session: SSLSession) = true
   }
 
-  def destroyAllSSLSecurityForTheEntireVMForever() {
+  def destroySSLSecurity(): Unit = {
     val trustAllCerts = Array[TrustManager](AllTM)
     val sslContext = SSLContext.getInstance("SSL")
     sslContext.init(null, trustAllCerts, null)
