@@ -1,4 +1,4 @@
-# Scala SSL Disabler
+# Scala and Java SSL Disabler
 A quick and dirty fix for problems with Java's SSL certificate verification
 system. Works by disabling all SSL security for the entire VM running instance.
 
@@ -34,12 +34,26 @@ Also if you are just testing and debugging, and don't want to fiddle with all
 that.
 
 
-## Usage
-Just put the `SecurityBypasser` object anywhere in your project, and call the
-the `destroyAllSSLSecurityForTheEntireVMForever` method on startup, or before
-establishing the first connection (there no benefit to calling it multiple
-times).
+## Usage (Scala)
+Put the `SecurityBypasser` object in your project. You can then use
+`destroySSLSecurity` and `restoreSllSecurity` methods directly, or you can use
+the `executeBypassed` method:
 
+```scala
+  val result = SecurityBypasser.executeBypassed {
+    ...
+  }
+```
+
+## Usage (Scala)
+Put the `SecurityBypasser` class in your project. You can then use
+`destroySSLSecurity` and `restoreSllSecurity` methods:
+
+```java
+    SecurityBypasser.destroySSLSecurity();
+    ...
+    SecurityBypasser.restoreSllSecurity();
+```
 
 ## License
-[Unlicensend](http://unlicense.org/)
+[MIT License](https://choosealicense.com/licenses/mit/)
